@@ -1,0 +1,47 @@
+import math
+def la_snt(num):
+    if num < 2:
+        return False
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return False 
+    return True
+
+#--------------------
+n = int(input("Nhap n: "))
+print(f"SNT nho hon {n} la:")
+for i in range(2, n):
+    if la_snt(i):
+        print(i, end=" ")
+
+#--------------------
+n = int(input("Nhap n: "))
+giaithua = 1
+for i in range(1, n + 1):
+    giaithua *= i
+print(f"Giai thua {n} la: {giaithua}")
+
+#--------------------
+numbers = list(map(int, input("Nhập danh sách số: ").split()))  #Các số cách nhau bằng khoảng trắng
+
+if not numbers:
+    print("Danh sách trống")
+else:
+    max = numbers[0]
+    for num in numbers:
+        if num > max:
+            max_num = num
+    print("Số lớn nhất là:", max_num)
+
+#--------------------------
+
+n = int(input("Nhập n: "))
+tong = 0
+for i in range(n):
+    if i % 4 == 0 and i % 5 != 0:
+        tong += i
+print(tong)
+
+#---------------
+n = input("Nhập số: ")
+print("Số đảo:", n[::-1])
