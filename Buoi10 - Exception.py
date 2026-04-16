@@ -33,4 +33,7 @@ a=input("Nhập a:")
 b=input("Nhập b:")
 chia(a,b)
 
-
+# # Ví dụ sử dụng random Module:
+#  import random
+#  print(random.random())
+# print(random.randint(1, 10))

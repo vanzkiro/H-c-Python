@@ -1,0 +1,18 @@
+from math_utils import *
+a = cong_ps(1, 2, 3, 4)
+print(a)
+b = tru_ps(1, 2, 3, 4)
+print(b)
+c = nhan_ps(1, 2, 3, 4)
+print(c)
+d = chia_ps(1, 2, 3, 4)
+print(d)
+
+e = tinhCht(2)
+print(e)
+f = tinhSht(2)
+print(f)
+g = tinhChcn(1, 2)
+print(g)
+h = tinhShcn(1, 2)
+print(h)

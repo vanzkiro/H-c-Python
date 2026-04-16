@@ -16,16 +16,3 @@ print(math.sin(0))
 print(math.cos(0))
 print(math.tan(45))
 
-
-
-
-
-
-
-
-
-
-# # Ví dụ sử dụng random Module:
-# import random
-# print(random.random())
-# print(random.randint(1, 10))
