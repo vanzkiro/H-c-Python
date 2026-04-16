@@ -1,0 +1,85 @@
+# class NhanVien:
+#     def __init__(self):
+#         self.ma = ""
+#         self.ten = ""
+#         self.namsinh = 0
+#         self.que = ""
+
+#     def nhap(self):
+#         self.ma = input("Mã: ")
+#         self.ten = input("Tên: ")
+#         self.namsinh = int(input("Năm sinh: "))
+#         self.que = input("Quê: ")
+
+#     def hien(self):
+#         print(self.ma, self.ten, self.namsinh, self.que)
+
+
+# ds = []
+# n = int(input("Số NV: "))
+# for _ in range(n):
+#     nv = NhanVien()
+#     nv.nhap()
+#     ds.append(nv)
+
+# print("\nNV quê Hải Dương:")
+# for nv in ds:
+#     if nv.que.lower() == "hải dương":
+#         nv.hien()
+
+# min_ns = min(nv.namsinh for nv in ds)
+# print("\nNV lớn tuổi nhất:")
+# for nv in ds:
+#     if nv.namsinh == min_ns:
+#         nv.hien()
+
+
+from random import choice
+
+
+class NhanVien:
+    def __init__(self, ma, ten, namsinh, que):
+        self.ma = ma
+        self.ten = ten
+        self.namsinh = namsinh
+        self.que = que
+
+    def nhap(self):
+        self.ma = input("Mã: ")
+        self.ten = input("Ten")
+        self.namsinh = int(input("Nam sinh"))
+        self.que = input("Que")
+
+    def hien(self):
+        print(self.ma, self.ten, self.namsinh, self.que)
+
+ds = []
+def them_nv():
+    n = int(input("Số NV: "))
+    for _ in range(n):    
+        nv = NhanVien("", "", 0, "")
+        nv.nhap()
+        ds.append(nv)
+def que_hd():
+    print("Nhan vien que hai duong:")
+    for nv in ds:
+        if nv.que.lower() == "hai duong":
+            nv.hien()
+def maxtuoi():
+    print("Nhan vien lon tuoi nhat")
+    min_nv = min(nv.namsinh for nv in ds)
+    for nv in ds:
+        if nv.namsinh == min_nv:
+            nv.hien()
+while True:
+    print("1. them nv 2.Qua hai duong 3. Lon tuoi nhat")
+    choice = int(input("Chon: "))
+    if choice == 1:
+        them_nv()
+    elif choice == 2:
+        que_hd()
+    elif choice == 3:
+        maxtuoi()
+    else:
+        break 
+     

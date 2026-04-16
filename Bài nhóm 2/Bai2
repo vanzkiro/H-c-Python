@@ -1,0 +1,121 @@
+# class SinhVien:
+#     def __init__(self, ten, mssv, khoa, namsinh):
+#         self.ten = ten
+#         self.mssv = mssv
+#         self.khoa = khoa
+#         self.namsinh = namsinh
+
+#     def hien_thi(self):
+#         print(self.ten, "-", self.mssv, "-", self.khoa, "-", self.namsinh)
+
+
+# ds = []
+
+# def them_sv():
+#     ten = input("Tên: ")
+#     mssv = input("MSSV: ")
+#     khoa = input("Khoa: ")
+#     ns = input("Năm sinh: ")
+#     ds.append(SinhVien(ten, mssv, khoa, ns))
+
+# def xoa_sv():
+#     mssv = input("Nhập MSSV cần xóa: ")
+#     for sv in ds:
+#         if sv.mssv == mssv:
+#             ds.remove(sv)
+#             print("Đã xóa")
+#             return
+#     print("Không tìm thấy")
+
+# def sua_sv():
+#     mssv = input("Nhập MSSV cần sửa: ")
+#     for sv in ds:
+#         if sv.mssv == mssv:
+#             sv.ten = input("Tên mới: ")
+#             sv.khoa = input("Khoa mới: ")
+#             sv.namsinh = input("Năm sinh mới: ")
+#             print("Đã sửa")
+#             return
+#     print("Không tìm thấy")
+
+# def hien_ds():
+#     if not ds:
+#         print("Danh sách rỗng")
+#     for sv in ds:
+#         sv.hien_thi()
+
+# while True:
+#     print("\n1.Thêm  2.Xóa  3.Sửa  4.Xem  0.Thoát")
+#     chon = input("Chọn: ")
+
+#     if chon == "1":
+#         them_sv()
+#     elif chon == "2":
+#         xoa_sv()
+#     elif chon == "3":
+#         sua_sv()
+#     elif chon == "4":
+#         hien_ds()
+#     elif chon == "0":
+#         break
+
+
+
+
+from random import choice
+import re
+
+
+class SinhVien:
+    def __init__(self, ten, msv, khoa, ntns):
+        self.ten = ten
+        self.msv = msv
+        self.khoa = khoa
+        self.ntns = ntns
+    
+    def hien_info(self):
+        print(self.ten, self.msv, self.khoa, self.ntns)
+
+ds = []
+def them_sv():
+    ten = input("Nhap ten: ")
+    msv = input("Nhap msv")
+    khoa = input("Nhap khoa")
+    ntns = input("Nhap ntns")
+    ds.append(SinhVien(ten, msv, khoa, ntns))
+    print("Them thanh cong")
+
+def sua_sv():
+    msv = input("Nhap msv can sua")
+    for sv in ds:
+        if sv.msv == msv:
+            sv.ten = input("Nhap ten moi")
+            sv.khoa = input("Nhap khoa moi")
+            sv.ntns = input("Nhap ntns moi")
+            print("Sua thanh cong")
+            return
+    print("Khong tim thay sinh vien")
+    
+def xoa_sv():
+    msv = input("NHap msv")
+    for sv in ds:
+        if sv.msv == msv:
+            ds.remove(sv)
+            print("Xoa thanh cong")
+            return
+    print("Khong tim thay sinh vien")
+
+def xem_ds():
+    if not ds:
+        print("Danh sach rong")
+    for sv in ds:
+        sv.hien_info()
+
+while True:
+    print("1.Them 2.Sua 3.Xoa 4.Xem 0.Thoat")
+    choice = input("Nhap ")
+    if choice == "1": them_sv()
+    elif choice == "2": sua_sv()
+    elif choice == "3": xoa_sv()
+    elif choice == "4": xem_ds()
+    elif choice == "0": break

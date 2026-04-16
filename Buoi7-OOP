@@ -1,0 +1,68 @@
+class Rectange:
+    length = 30 #bien toan cuc 
+    def __init__(self, wight, height): 
+        #__init__ la Constructor mac dinh
+        #sel - tham so dau tien cua constructor 
+        self.wight = wight   #bien cuc bo
+        self.height = height
+    
+    def getArea(self):
+        area = round(self.wight * self.height, 1)
+        return area
+    
+    def getPerimeter(self):
+        perimeter = round((self.wight + self.height) * 2,1)
+        return perimeter
+
+r1 = Rectange(10, 5)
+print(r1.wight)
+print(r1.height)
+are = r1.getArea()
+print("Dien tich cua r1:",are)
+perimeter = r1.getPerimeter()
+print("Chu vi r1:",perimeter)
+
+print("the tich cua r1 la:", r1.length * r1.wight * r1.height)
+r1.color = "red"
+print(r1.color)
+r1.wight = 100
+print(r1.wight)
+
+# del r1.wight
+# print(r1.wight)
+
+#getattr lay gia tri chinh xac cua bien
+print(getattr(r1, "wight"))
+print(getattr(r1, "height"))
+print(getattr(r1, "color"))
+
+#hasattr kiem tra bien co ton tai hay khong
+print(hasattr(r1, "wight"))
+print(hasattr(r1, "height"))
+print(hasattr(r1, "color"))
+
+#setattr thay doi gia tri cua bien
+setattr(r1, "wight", 200)
+print(r1.wight)
+
+#delattr xoa bien
+delattr(r1, "wight")
+print(r1.wight)
+
+
+#------------------------------
+# r2 = Rectange(5, 2)
+# print(r2.wight)
+# print(r2.height)
+# a = r2.getArea()
+# print(a)
+# p = r2.getPerimeter()
+# print(p)
+# # Tính thể tích r2
+# print("Thể tích của r2 là:", r2.length * r2.wight * r2.height)
+
+# r3 = Rectange(20, 5)
+# # Tính thể tích r3
+# print("Thể tích của r3 là:", r3.length * r3.wight * r3.height)
+
+

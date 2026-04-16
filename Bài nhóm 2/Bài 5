@@ -1,0 +1,114 @@
+# class SinhVien:
+#     def __init__(self):
+#         self.ma = ""
+#         self.ten = ""
+#         self.que = ""
+#         self.diem = 0
+
+#     def nhap(self):
+#         self.ma = input("Mã: ")
+#         self.ten = input("Tên: ")
+#         self.que = input("Quê: ")
+#         self.diem = float(input("Điểm: "))
+
+#     def hien(self):
+#         print(self.ma, self.ten, self.que, self.diem)
+
+
+# ds = []
+# n = int(input("Số SV: "))
+# for _ in range(n):
+#     sv = SinhVien()
+#     sv.nhap()
+#     ds.append(sv)
+
+# print("\nDanh sách:")
+# for sv in ds:
+#     sv.hien()
+
+
+# for i in range(len(ds)):
+#     for j in range(i+1, len(ds)):
+#         if ds[i].ten > ds[j].ten:
+#             ds[i], ds[j] = ds[j], ds[i]
+
+# print("\nSắp xếp theo tên:")
+# for sv in ds:
+#     sv.hien()
+
+# for i in range(len(ds)):
+#     for j in range(i+1, len(ds)):
+#         if ds[i].diem > ds[j].diem:
+#             ds[i], ds[j] = ds[j], ds[i]
+
+# print("\nSắp xếp theo điểm:")
+# for sv in ds:
+#     sv.hien()
+
+
+from random import choice
+
+
+class SinhVien:
+    def __init__(self, ma, ten, que, diem):
+        self.ma = ma
+        self.ten = ten
+        self.que = que
+        self.diem = diem
+    
+    def nhap(self):
+        self.ma = input("Nhap ma")
+        self.ten = input("Nhap ten")
+        self.que = input("Nhap que")
+        self.diem = float(input("Nhap diem"))
+    
+    def hien(self):
+        print(self.ma, self.ten, self.que, self.diem)
+
+ds = []
+def nhap_ds():
+    n = int(input("Nhap so luong sinh vien"))
+    for _ in range(n):
+        sv = SinhVien("", "", "", 0)
+        sv.nhap()
+        ds.append(sv)
+        print("Them thanh cong")
+def hien_ds():
+    for sv in ds:
+        sv.hien()
+
+def sx_ten():
+    for i in range(len(ds)):
+        for j in range(i+1, len(ds)):
+            if ds[i].ten > ds[j].ten:
+                ds[i], ds[j] = ds[j], ds[i]
+
+    print("\nSap xep theo ten:")
+    for sv in ds:
+        sv.hien()
+
+def sx_diem():
+    for i in range(len(ds)):
+        for j in range(i+1, len(ds)):
+            if ds[i].diem > ds[j].diem:
+                ds[i], ds[j] = ds[j], ds[i]
+
+    print("\nSap xep theo diem:")
+    for sv in ds:
+        sv.hien()
+
+while True:
+    print("1. nhap 2.sx ten 3.sx diem 4. hien 5. thoat")
+    choice = int(input("Chon: "))
+    if choice == 1:
+        nhap_ds()
+    elif choice == 2:
+        sx_ten()
+    elif choice == 3:
+        sx_diem()
+    elif choice == 4:
+        hien_ds()
+    elif choice == 5:
+        break
+
+

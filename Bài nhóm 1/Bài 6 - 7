@@ -1,0 +1,31 @@
+
+n = input("Nhập số: ")
+print("Số đảo:", n[::-1])
+
+#-------------------
+while True:
+    print("1. C → F")
+    print("2. F → C")
+    print("3. In bảng 0 → 30 (C → F)")
+    print("0. Thoát")
+
+    chon = input("Chọn: ")
+
+    if chon == "1":
+        c = float(input("Nhập °C: "))
+        f = c * 9/5 + 32
+        print("Kết quả:", f, "°F")
+
+    elif chon == "2":
+        f = float(input("Nhập °F: "))
+        c = (f - 32) * 5/9
+        print("Kết quả:", c, "°C")
+
+    elif chon == "3":
+        print("C   F")
+        for c in range(0, 31):
+            f = c * 9/5 + 32
+            print(c, " ", f)
+
+    elif chon == "0":
+        break

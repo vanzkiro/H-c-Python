@@ -1,0 +1,149 @@
+# class Sach:
+#     def __init__(self, ten, tacgia, nam):
+#         self.ten = ten
+#         self.tacgia = tacgia
+#         self.nam = nam
+
+#     def nhap(self):
+#         self.ten = input("Tên sách: ")
+#         self.tacgia = input("Tác giả: ")
+#         self.nam = int(input("Năm XB: "))
+
+#     def hien(self):
+#         print(self.ten, "-", self.tacgia, "-", self.nam)
+
+
+# class QLSach:
+#     def __init__(self):
+#         self.ds = []
+
+#     def nhap_ds(self):
+#         n = int(input("Số sách: "))
+#         for _ in range(n):
+#             s = Sach("", "", 0)
+#             s.nhap()
+#             self.ds.append(s)
+
+#     def hien_ds(self):
+#         if not self.ds:
+#             print("Danh sách rỗng")
+#             return
+#         print("\nDanh sách sách:")
+#         for s in self.ds:
+#             s.hien()
+
+#     def loc_nam(self):
+#         if not self.ds:
+#             print("Danh sách rỗng")
+#             return
+#         x = int(input("Nhập năm: "))
+#         found = False
+#         print("\nKết quả:")
+#         for s in self.ds:
+#             if s.nam == x:
+#                 s.hien()
+#                 found = True
+#         if not found:
+#             print("Không có sách")
+
+#     def sap_xep(self):
+#         for i in range(len(self.ds)):
+#             for j in range(i+1, len(self.ds)):
+#                 if self.ds[i].ten > self.ds[j].ten:
+#                     self.ds[i], self.ds[j] = self.ds[j], self.ds[i]
+#         print("Đã sắp xếp theo tên")
+
+
+# ql = QLSach()
+
+# while True:
+#     print("\n===== MENU =====")
+#     print("1. Nhập danh sách")
+#     print("2. Hiển thị danh sách")
+#     print("3. Lọc theo năm")
+#     print("4. Sắp xếp theo abc")
+#     print("0. Thoát")
+
+#     chon = input("Chọn: ")
+
+#     if chon == "1":
+#         ql.nhap_ds()
+#     elif chon == "2":
+#         ql.hien_ds()
+#     elif chon == "3":
+#         ql.loc_nam()
+#     elif chon == "4":
+#         ql.sap_xep()
+#         ql.hien_ds()
+#     elif chon == "0":
+#         print("Thoát chương trình")
+#         break
+#     else:
+#         print("Chọn không hợp lệ")
+
+from random import choice
+import re
+
+
+class Sach:
+    def __init__(self, ten, tg, nxb):
+        self.ten = ten
+        self.tg = tg
+        self.nxb = nxb
+
+    def nhap(self):
+        self.ten = input("Nhap ten sach: ")
+        self.tg = input("Nhap tac gia: ")
+        self.nxb = int(input("Nhap nam xuat ban: "))
+
+    def hien(self):
+        print(self.ten, "-", self.tg, "-", self.nxb)
+
+class QLSach:
+    def __init__(self):
+        self.ds = []
+    
+    def nhap_ds(self):
+        n = int(input("Nhap so luong sach: "))
+        for _ in range(n):
+            s = Sach("", "", 0)
+            s.nhap()
+            self.ds.append(s)
+            print("them thanh cong")
+    def hien_ds(self):
+        for s in self.ds:
+            s.hien()
+    
+    def loc_nam(self):
+        if not self.ds:
+            print("Rong")
+            return
+        found = False
+        x = int(input("Nhap nam"))
+        for s in self.ds:
+            if s.nxb == x:
+                s.hien()
+                found = True
+        if not found:
+            print("Khong co sach")
+
+    def sap_xep(self):
+        for i in range(len(self.ds)):
+            for j in range(i+1, len(self.ds)):
+                self.ds[i].ten > self.ds[j].ten
+                self.ds[i], self.ds[j] = self.ds[j], self.ds[i]
+        print("Da sap xep")
+    
+ql = QLSach()
+while True:
+    print("1. Nhap danh sach 2. Hien danh sach 3. Loc theo nam 4. Sap xep 0. Thoat")
+    choice = input("Nhap ")
+    if choice == "1": ql.nhap_ds()
+    elif choice == "2": ql.hien_ds()
+    elif choice == "3": ql.loc_nam()
+    elif choice == "4": ql.sap_xep()
+    elif choice == "0": break
+
+    
+
+
