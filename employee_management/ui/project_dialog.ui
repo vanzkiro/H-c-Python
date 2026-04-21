@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProjectDialog</class>
+ <widget class="QDialog" name="ProjectDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>420</width><height>280</height></rect>
+  </property>
+  <property name="windowTitle"><string>Phân Công Dự Án</string></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text"><string>PHÂN CÔNG DỰ ÁN</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0"><widget class="QLabel" name="lblEmpId"><property name="text"><string>Mã nhân viên</string></property></widget></item>
+     <item row="0" column="1"><widget class="QLineEdit" name="txtEmpId"><property name="placeholderText"><string>EMP0001</string></property></widget></item>
+
+     <item row="1" column="0"><widget class="QLabel" name="lblProject"><property name="text"><string>Tên dự án</string></property></widget></item>
+     <item row="1" column="1"><widget class="QComboBox" name="cboProject">
+      <item><property name="text"><string>Alpha Project</string></property></item>
+      <item><property name="text"><string>Beta Platform</string></property></item>
+      <item><property name="text"><string>Gamma System</string></property></item>
+      <item><property name="text"><string>Delta App</string></property></item>
+      <item><property name="text"><string>Epsilon API</string></property></item>
+      <item><property name="text"><string>Zeta Portal</string></property></item>
+      <item><property name="text"><string>Khác...</string></property></item>
+     </widget></item>
+
+     <item row="2" column="0"><widget class="QLabel" name="lblCustom"><property name="text"><string>Tên khác (nếu có)</string></property></widget></item>
+     <item row="2" column="1"><widget class="QLineEdit" name="txtCustomProject"><property name="placeholderText"><string>Nhập tên dự án tùy chỉnh</string></property></widget></item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item><widget class="QPushButton" name="btnAssign"><property name="text"><string>✔ Phân Công</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnCancel"><property name="text"><string>✖ Hủy</string></property></widget></item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

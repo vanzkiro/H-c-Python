@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Hệ Thống Quản Lý Nhân Viên Công Ty</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="mainHLayout" stretch="1,4">
+    <!-- Sidebar -->
+    <item>
+     <widget class="QFrame" name="sidebarFrame">
+      <property name="minimumWidth"><number>200</number></property>
+      <property name="maximumWidth"><number>220</number></property>
+      <property name="styleSheet">
+       <string>QFrame#sidebarFrame { background-color: #1a2236; border-right: 2px solid #2563eb; }</string>
+      </property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <item>
+        <widget class="QLabel" name="logoLabel">
+         <property name="text"><string>👔 EMS</string></property>
+         <property name="alignment"><set>Qt::AlignCenter</set></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnEmployees">
+         <property name="text"><string>👥  Nhân Viên</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnProjects">
+         <property name="text"><string>📁  Dự Án</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSalary">
+         <property name="text"><string>💰  Bảng Lương</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnPerformance">
+         <property name="text"><string>📊  Hiệu Suất</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget name="btnReports" class="QPushButton">
+         <property name="text"><string>📈  Báo Cáo</string></property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <!-- Main Content -->
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <!-- Page 0: Employees -->
+      <widget class="QWidget" name="pageEmployees"/>
+      <!-- Page 1: Projects -->
+      <widget class="QWidget" name="pageProjects"/>
+      <!-- Page 2: Salary -->
+      <widget class="QWidget" name="pageSalary"/>
+      <!-- Page 3: Performance -->
+      <widget class="QWidget" name="pagePerformance"/>
+      <!-- Page 4: Reports -->
+      <widget class="QWidget" name="pageReports"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

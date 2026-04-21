@@ -1,0 +1,36 @@
+from statistics import quantiles
+
+import pandas as pd
+import numpy as np
+
+S = pd.Series(np.random.randint(100, size = 5))
+print(S)
+
+# print(S.index)
+# RangeIndex = pd.MultiIndex.from_product()
+print("------------------------")
+phones = ["Iphone", "Samsung Note", "Samsung s", "Nokia",]
+quantiles = [10, 12, 30, 100]
+S1 = pd.Series(quantiles, index=phones)
+S2 = pd.Series([32, 14, 15, 16], index=phones)
+print(S1 + S2)
+
+
+print("---------------------")
+peoples_df = pd.read_csv('./cars_dataset.csv')
+print(peoples_df.head(10))
+#in ra loai xe co price lon nhat
+print("---------------------")
+print(peoples_df.sort_values(by=['price'], ascending=False).head(1))
+#in ra tat ca xe cua hang Toyota
+print("---------------------")
+print(peoples_df[peoples_df['body-style'] == 'Toyota'])
+#dem va in ra tong so dong xe cua moi hang
+print("-----------------------")
+print(peoples_df.groupby(['body-style']).size())
+# tim va in ra xe co price lon nhat cua moi hang
+print("-----------------------")
+print(peoples_df.groupby(['body-style'])['price'].max())
+# tim va in ra average-mileage trung binh cua moi hang
+print("-----------------------")
+print(peoples_df.groupby(['body-style'])['average-mileage'].mean())

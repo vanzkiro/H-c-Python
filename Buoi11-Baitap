@@ -1,0 +1,45 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df_sales = pd.read_csv('sales_dataset.csv')
+
+profit_list = df_sales['total_profit'].tolist()
+
+profit_range = [150000, 175000, 200000, 225000, 250000, 300000, 350000]
+
+plt.figure(figsize=(8, 5))
+plt.hist(profit_list, bins=profit_range, label='Profit data')
+
+plt.xlabel('profit range in dollar')
+plt.ylabel('Actual Profit in dollar')
+plt.title('Profit data')
+plt.xticks(profit_range)
+plt.legend(loc='upper left')
+
+plt.show()
+
+
+
+
+
+df_cars = pd.read_csv('cars_dataset.csv')
+
+df_cars['price'] = pd.to_numeric(df_cars['price'], errors='coerce')
+df_cars = df_cars.dropna(subset=['price'])
+
+brand_value = df_cars.groupby('company')['price'].sum().sort_values(ascending=False)
+
+plt.figure(figsize=(12, 6))
+brand_value.plot(kind='bar', color='skyblue')
+plt.title('Tổng giá trị thương hiệu của các hãng xe (Bar Chart)')
+plt.xlabel('Hãng xe')
+plt.ylabel('Tổng giá trị (Price)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+plt.figure(figsize=(10, 8))
+brand_value.plot(kind='pie', autopct='%1.1f%%', startangle=140)
+plt.title('Tỷ lệ giá trị thương hiệu các hãng xe (Pie Chart)')
+plt.ylabel('') 
+plt.show()

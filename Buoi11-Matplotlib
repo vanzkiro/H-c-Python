@@ -1,0 +1,42 @@
+# from matplotlib import pyplot as plt
+# import numpy as np
+
+# x = np.arange(-5, 5, 0.01)
+# y = x ** 3
+
+# # dat ten
+# plt.title("Ham y = x^3")
+# plt.xlabel("Truc x")
+# plt.ylabel("Truc y")
+
+# #hien thi luoi
+# plt.grid()
+
+# plt.plot(x, y, label ="y = x^3") #ve plt.plot()
+# plt.legend() #hien thi chu thich
+# plt.show() #hien thi hinh ve 
+
+#-------------------------------------------
+import matplotlib.pyplot as plt
+
+# Du lieu
+date = ["10-03-16","10-04-16","10-05-16","10-06-16","10-07-16"]
+open = [774.25,776.03,779.31,779,779.66]
+high = [776.065, 778.71, 782.07, 780.48, 779.66]
+low  = [769.5, 772.9 ,775.65, 775.54,770.75]
+close = [772.56,776.43,776.47,776.86,775.08]
+
+# Ve bieu do
+plt.plot(date, open, label='Open')
+plt.plot(date, high, label='High')
+plt.plot(date, low, label='Low')
+plt.plot(date, close, label='Close')
+
+plt.title("So sanh giua cac ngay")
+plt.xlabel("Ngay")
+plt.ylabel("Gia")
+plt.legend() #hien thi chu thich
+plt.grid() #hien thi luoi
+
+plt.savefig("bai1.png")
+plt.show() #hien thi hinh ve
